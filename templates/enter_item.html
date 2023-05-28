@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ super () }}
+
+<div class = "container">
+
+
+<div class = "row">
+<div class = "col-md-8">
+
+   <label >New prognosis </label>
+
+   <br>
+
+</div>
+</div>
+
+
+<div class = "row">
+<div class = "col-md-8">
+
+
+<form action="/enter_item" enctype="multipart/form-data" method="post">  
+
+<table class="table table-striped table-hover">
+  <tr>
+     <td><label class="text-primary">age: </label></td>
+
+     <td><input type="text" name="age" size = 40 value="" required/></td>
+  </tr> 
+
+
+ 
+  <tr>
+     <td><label class="text-primary">Gender: </label></td>
+      <td><select name="gender">
+      <option disabled>Choose an opiton</option>
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+        </select></td>
+<!--     <td><input type="text" name="gender" size = 80 value="" requried/></td>-->
+  </tr> 
+
+
+  <table class="table table-striped table-hover">
+   <tr>
+      <td><label class="text-primary">refraction: </label></td>
+ 
+      <td><input type="text" name="refraction" size = 40 value="" required/></td>
+   </tr> 
+
+  <tr>
+     <td><label class="text-muted">sport_hrs: </label></td>
+     <td><input type="text" name="sport_hrs" size = 80 value="" required/></td>
+  </tr> 
+
+  <tr>
+     <td><label class="text-primary">read_hrs: </label></td>
+     <td><input type="text" name="read_hrs" value="" required/></td>
+   </tr>
+
+
+   <tr>
+      <td><label class="text-primary">comp_hrs: </label></td>
+      <td><input type="text" name="comp_hrs" value="" required/></td>
+   </tr>
+ 
+   <tr>
+      <td><label class="text-primary">stydy_hrs: </label></td>
+      <td><input type="text" name="study_hrs" value="" required/></td>
+   </tr>
+
+  <tr>
+     <td><label class="text-muted">TV_hrs: </label></td>
+     <td><input type="text" name="TV_hrs" size = 80 value="" required/></td>
+  </tr> 
+
+  
+
+  
+  
+  <tr>
+     <td><label class="text-primary">Has mother myopia? </label></td>
+      <td><select name="mom_myopia">
+      <option disabled>Choose an answer</option>
+      <option value="0">No myopia</option>
+      <option value="1">Mother is nearsighted </option>
+        </select></td>
+<!--     <td><input type="text" name="mom_myopia" value="" required/></td>-->
+  </tr>
+
+  <tr>
+     <td><label class="text-primary">Has father myopia?: </label></td>
+      <td><select name="dad_myopia">
+      <option disabled>Choose an answer</option>
+      <option value="0">No myopia</option>
+      <option value="1">Father is nearsighted </option>
+        </select></td>
+<!--     <td><input type="text" name="mom_myopia" value="" required/></td>-->
+  </tr>
+
+<!--  <tr>-->
+<!--     <td><label class="text-primary">dad myopia: </label></td>-->
+<!--     <td><input type="text" name="dad_myopia" value="" required/></td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--     <td><label class="text-primary">parent_was_in_college: </label></td>-->
+<!--     <td><input type="text" name="parent_was_in_college" value="" requied/></td>     -->
+<!--  </tr>-->
+  
+  <tr>
+     <td> </td>
+     <td align="right"> <input type="submit" class="btn btn-primary" value="Get result" /></td>
+  </tr>
+
+</table>
+</form> 
+</div>
+</div>
+
+
+</div>
+
+<div class = "container text-danger">
+  {% for msg in get_flashed_messages() %}
+    <div>{{msg}}</div>
+  {% endfor %} 
+</div>
+{% endblock content %}
